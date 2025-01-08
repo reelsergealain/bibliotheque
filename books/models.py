@@ -8,6 +8,10 @@ class Author(models.Model):
     def __str__(self):
         return self.name
     
+    class Meta:
+        ordering = ['name']
+        verbose_name_plural = 'Auteurs'
+    
     
 class Books(models.Model):
     title = models.CharField(max_length=200)
@@ -19,3 +23,7 @@ class Books(models.Model):
     
     def __str__(self):
         return f"{self.title} ({self.quantity})"
+    
+    class Meta:
+        ordering = ['title']
+        verbose_name_plural = 'Livres'
