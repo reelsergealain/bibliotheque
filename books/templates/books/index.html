@@ -1,13 +1,52 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'dist/css/adminx.css' %}">
-</head>
-<body>
-    
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <!-- BreadCrumb -->
+    <nav aria-label="breadcrumb" role="navigation">
+      <ol class="breadcrumb adminx-page-breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Tableau de bord</li>
+      </ol>
+    </nav>
+
+    <div class="pb-3">
+      <h1>Tableau de bord</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="card border-0 bg-primary text-white text-center mb-grid w-100">
+            <div class="d-flex flex-row align-items-center h-100">
+              <div class="card-icon d-flex align-items-center h-100 justify-content-center">
+                <i data-feather="book"></i>
+              </div>
+              <div class="card-body">
+                <div class="card-info-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nombre de livres disponible</font></font></div>
+                <h3 class="card-title mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                  {{ books.count }}
+                </font></font></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex">
+          <div class="card border-0 bg-success text-white text-center mb-grid w-100">
+            <div class="d-flex flex-row align-items-center h-100">
+              <div class="card-icon d-flex align-items-center h-100 justify-content-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+              </div>
+              <div class="card-body">
+                <div class="card-info-title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Inscriptions (cette semaine)</font></font></div>
+                <h3 class="card-title mb-0"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+                  1 258
+                </font></font></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+{% endblock content %}
