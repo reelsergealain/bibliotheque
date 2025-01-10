@@ -1,8 +1,10 @@
 from django import forms
-from models import Books
+from books.models import Author, Category, Books
 
 class BookForm(forms.ModelForm):
-    
     class Meta:
         model = Books
-        fields = '__all__'
+        fields = ['title', 'author', 'category', 'quantity', 'published_date', 'isbn']
+        widgets = {
+            'published_date': forms.DateInput(attrs={'type': 'date'})
+        }
