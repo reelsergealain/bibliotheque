@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load widget_tweaks %}
 
 {% block content %}
 
@@ -62,19 +63,43 @@
 
             <!-- Modal Body -->
             <div class="modal-body">
-              <form method="post" action="">
+              <form method="post" action="{% url 'books:add_book' %}">
                 {% csrf_token %}
                 <div class="row w-100">
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="title">Titre:</label>
-                      <input type="text" class="form-control" id="title" name="title" required>
+                      {{ form.title|add_class:"form-control" }}
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="author">Auteur:</label>
-                      <input type="text" class="form-control" id="author" name="author" required>
+                      {{ form.author|add_class:"form-control" }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="author">Categories:</label>
+                      {{ form.category|add_class:"form-control" }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="author">Quantiter:</label>
+                      {{ form.quantity|add_class:"form-control" }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="author">Date de publication: </label>
+                      {{ form.published_date|add_class:"form-control" }}
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="isbn">isbn: </label>
+                      {{ form.isbn|add_class:"form-control" }}
                     </div>
                   </div>
                 </div>

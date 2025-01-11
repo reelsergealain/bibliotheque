@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" type="text/css" href="{% static 'dist/css/adminx.css' %}" media="screen" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     <!--
       # Optional Resources
@@ -175,5 +177,11 @@
     <!-- If you prefer vanilla JS these are the only required scripts -->
     <!-- script src="./dist/js/vendor.js"></script>
     <script src="./dist/js/adminx.vanilla.js"></script-->
+      <script>
+        flatpickr("#datepicker", {
+          altInput: true,
+          dateFormat: "d-m-Y",
+      });
+      </script>
   </body>
 </html>
